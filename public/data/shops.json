@@ -1,0 +1,21 @@
+{
+    "shops": [
+      {
+        "location": "Portland",
+        "imageName": "portland.png",
+        "address": ""
+      },
+      {
+        "location": "Astoria",
+        "imageName": "astoria.png",
+        "address": ""
+      },
+      {
+        "location": "All Locations",
+        "imageName": "none.png",
+        "address": ""
+      }
+    ]
+  }
+      
+  
