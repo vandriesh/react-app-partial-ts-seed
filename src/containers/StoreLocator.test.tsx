@@ -1,10 +1,10 @@
-import axios from 'axios';
+import axios, { AxiosResponse } from 'axios';
 import { render, fireEvent, getByText } from 'react-testing-library';
 import React from 'react';
 
-import StoreLocator from './StoreLocator';
+import StoreLocator, { Shop } from './StoreLocator';
 
-const getShops = () => [
+const getShops: () => Shop[] = () => [
     {
         location: 'Portland',
         imageName: 'portland.png',
@@ -30,7 +30,7 @@ describe('StoreLocator Data Fetch', () => {
             data: {
                 shops: getShops()
             }
-        });
+        } as AxiosResponse<{ shops: Shop[] }>);
     });
 
     it("should have been calling axios's get", () => {
@@ -41,7 +41,7 @@ describe('StoreLocator Data Fetch', () => {
 });
 
 describe('ChooseMap works', () => {
-    let storeContainer;
+    let storeContainer: HTMLElement;
 
     beforeEach(() => {
         const locatorShops = {
